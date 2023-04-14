@@ -1,0 +1,10 @@
+{% extends './base.html'%}
+
+{% block content %}
+<h1>Escreva seu lembrete</h1>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" onclick="fecharPopup()">Enviar</button>
+</form>
+{% endblock %}

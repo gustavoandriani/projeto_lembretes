@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from lembretes.views import lista_lembrete, form_lembrete
 
 urlpatterns = [
+    path('', lista_lembrete),
+    path('criar_lembrete/', form_lembrete),
     path('admin/', admin.site.urls),
 ]

@@ -1,0 +1,13 @@
+{% extends './base.html' %}
+
+{% block content %}
+    <h1>Todas as notas:</h1>
+    <ul>
+        {% for lembrete in lembretes_lembrete %}
+            <li>{{ lembrete.title }} - {{ lembrete.text }}</li>
+        {% empty %}
+            <li>Nenhuma nota encontrada.</li>
+        {% endfor %}
+    </ul>
+    <button onclick="abrirPopup()">Adicionar Lembrete</button>
+{% endblock %}
