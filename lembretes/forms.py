@@ -1,5 +1,7 @@
 from django import forms
+from .models import lembrete
 
-class criar_lembrete(forms.Form):
-    titulo = forms.CharField(max_length=100)
-    texto = forms.CharField(widget=forms.Textarea)
+class criar_lembrete(forms.ModelForm):
+    class Meta:
+        model = lembrete
+        fields = ['title', 'text']
