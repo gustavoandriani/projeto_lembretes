@@ -1,7 +1,7 @@
 {% extends './base.html'%}
 
 {% block content %}
-<h1 id="titulo-criando-lembrete">Escreva seu lembrete</h1>
+<h1 class="titulos">Escreva seu lembrete</h1>
 <form id="criando-lembrete" method="POST">
   {% csrf_token %}
   {{ form.as_p }}

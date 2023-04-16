@@ -22,6 +22,7 @@ ul#todos-lembretes {
   align-items: center;
   justify-content: center;
 }
+
 #todos-lembretes > .card-lembrete {
   display: inline-block;
   list-style: none!important;
@@ -57,10 +58,13 @@ button.adicionar-lembrete {
   position: relative;
   top: 35px;
   left: 47%;
+  transition: ease-in 0.2s;
 }
 
 button.adicionar-lembrete:hover {
   cursor: pointer;
+  background-color: #FF718D;
+  color: white;
 }
 
 li.card-lembrete a {
@@ -81,7 +85,7 @@ a.deletar-lembrete:hover {
 
 
 /* ESTILIZANDO FORMULÁRIO PARA CRIAR LEMBRESTES*/
-h1#titulo-criando-lembrete {
+h1.titulos {
   display: block;
   text-align: center;
   border-bottom: 3px solid #FF718D;
