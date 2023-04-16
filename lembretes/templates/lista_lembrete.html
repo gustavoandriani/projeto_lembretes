@@ -2,15 +2,22 @@
 
 {% block content %}
     <h1>Meus lembretes:</h1>
-    <div id="todos-lembretes" class="row">
+    <ul id="todos-lembretes">
         {% for lembrete in lembretes %}
-            <div class="card-lembrete col-4">
+            <li class="card-lembrete">
+                <a href="{% url 'remover_lembrete' lembrete.id %}" class="deletar-lembrete"><i class="fa-solid fa-trash"></i></a>
                 <h3 class="titulo-lembrete">{{ lembrete.title }}</h3>
                 <p class="texto-lembrete">{{ lembrete.text }}</p>
-            </div>
+            </li>
         {% empty %}
-            <span>Nenhuma nota encontrada.</span>
+            <span>Nenhum lembrete encontrado. Se já adicionou algum lembrete atualize a página ou aperte "F5"</span>
         {% endfor %}
-    </div>
-    <button class="adicionar-lembrete" onclick="abrirPopup()">Adicionar Lembrete</button>
+    </ul>
+    {% if total_lembretes == 12 %}
+        <div class="centralize">
+            <span>Delete alguns lembretes para adicionar mais</span>
+        </div>
+    {% else %}
+        <button class="adicionar-lembrete" onclick="abrirPopup()">Adicionar Lembrete</button>
+    {% endif %}
 {% endblock %}

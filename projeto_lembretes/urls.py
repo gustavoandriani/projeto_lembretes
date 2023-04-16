@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from lembretes.views import lista_lembrete, criando_lembrete
+from lembretes.views import lista_lembrete, criando_lembrete, remover_lembrete
 
 urlpatterns = [
-    path('', lista_lembrete),
-    path('criar_lembrete/', criando_lembrete),
+    path('lista_lembrete/', lista_lembrete, name='lista_lembrete'),
+    path('lista_lembrete/criar_lembrete/', criando_lembrete, name='criando_lembrete'),
+    path('remover/<int:id>', remover_lembrete, name='remover_lembrete'),
     path('admin/', admin.site.urls),
 ]

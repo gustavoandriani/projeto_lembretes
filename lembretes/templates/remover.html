@@ -1,0 +1,9 @@
+{% extends base.html %}
+{% block content %}
+<h1>Tem certeza que deseja excluir este item?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Sim">
+        <a href="{% url 'lista_lembrete' %}">Não</a>
+    </form>
+{% endblock %}

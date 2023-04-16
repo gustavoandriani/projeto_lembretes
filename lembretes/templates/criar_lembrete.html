@@ -1,10 +1,12 @@
 {% extends './base.html'%}
 
 {% block content %}
-<h1>Escreva seu lembrete</h1>
-<form method="POST">
+<h1 id="titulo-criando-lembrete">Escreva seu lembrete</h1>
+<form id="criando-lembrete" method="POST">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Salvar</button>
+  <button onclick="setTimeout(function() {
+    window.close();
+}, 1);" type="submit">Salvar</button>
 </form>
 {% endblock %}
