@@ -1,13 +1,16 @@
 {% extends './base.html' %}
 
 {% block content %}
-    <h1>Todas as notas:</h1>
-    <ul>
+    <h1>Meus lembretes:</h1>
+    <div id="todos-lembretes" class="row">
         {% for lembrete in lembretes %}
-            <li>{{ lembrete.title }} - {{ lembrete.text }}</li>
+            <div class="card-lembrete">
+                <h3 class="titulo-lembrete">{{ lembrete.title }}</h3>
+                <p class="texto-lembrete">{{ lembrete.text }}</p>
+            </div>
         {% empty %}
-            <li>Nenhuma nota encontrada.</li>
+            <span>Nenhuma nota encontrada.</span>
         {% endfor %}
-    </ul>
-    <button onclick="abrirPopup()">Adicionar Lembrete</button>
+    </div>
+    <button class="adicionar-lembrete" onclick="abrirPopup()">Adicionar Lembrete</button>
 {% endblock %}
